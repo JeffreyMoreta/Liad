@@ -1,0 +1,45 @@
+<%- include('header'); -%>
+  <div class="container">
+    <div class="page-header text-center">
+      <h1>Pinned</h1>
+      <a href="/profile" class="btn btn-secondary">Profile</a>
+      <a href="/pinned" class="btn btn-secondary">Pinned</a>
+      <a href="/lounge" class="btn btn-secondary">Lounge</a>
+      <a href="/logout" class="btn btn-secondary">Logout</a>
+    </div>
+    <div class="row mb-3">
+      <!-- LOCAL INFORMATION -->
+      <div class="container">
+        <div class="well">
+          <h3>Local</h3>
+          <% if (user.local.email) { %>
+          <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>email</strong>: <%= user.local.email %><br>
+          </p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- LOCAL INFORMATION -->
+      <div class="container">
+        <% if (pinned) { %>
+        <h3>Pinned</h3>
+        <ul class="searches">
+          <% for (var i = 0; i < pinned.length; i++) { %>
+          <li class="message">
+            <span><%= pinned[i].title %></span>
+            <span><%= pinned[i].year %></span>
+            <img src="<%= pinned[i].poster %>" style=" width: 100px;"/>
+            <span><i class="fa fa-thumbtack" aria-hidden="true"></i></span>
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
+      </div>
+    </div>
+    <script src="mainPinned.js"></script>
+</body>
+
+</html>

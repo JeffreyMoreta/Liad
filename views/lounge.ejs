@@ -1,0 +1,42 @@
+<%- include('header'); -%>
+  <div class="container">
+    <div class="page-header text-center">
+      <h1>Pinned</h1>
+      <a href="/profile" class="btn btn-secondary">Profile</a>
+      <a href="/pinned" class="btn btn-secondary">Pinned</a>
+      <a href="/lounge" class="btn btn-secondary">Lounge</a>
+      <a href="/logout" class="btn btn-secondary">Logout</a>
+    </div>
+    <div class="row mb-3">
+      <!-- LOCAL INFORMATION -->
+      <div class="container">
+        <div class="well">
+          <h3>Local</h3>
+          <% if (user.local.email) { %>
+          <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>email</strong>: <span class="userName"><%= user.local.email %></span><br>
+          </p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-messages">
+
+    </div>
+
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input id="msg" type="text" placeholder="Message" required autocomplete="off">
+        <button class="btn btn-secondary" type="button">Post</button>
+      </form>
+    </div>
+
+    <footer>
+      <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+      <script type="text/javascript" src="chat.js"></script>
+    </footer>
+</body>
+
+</html>

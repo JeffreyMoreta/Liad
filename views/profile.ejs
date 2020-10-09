@@ -1,0 +1,78 @@
+<%- include('header'); -%>
+  <div class="container">
+    <div class="page-header text-center">
+      <h1>Profile</h1>
+      <a href="/profile" class="btn btn-secondary">Profile</a>
+      <a href="/pinned" class="btn btn-secondary">Pinned</a>
+      <a href="/lounge" class="btn btn-secondary">Lounge</a>
+      <a href="/logout" class="btn btn-secondary">Logout</a>
+    </div>
+    <div class="row mb-3">
+      <!-- LOCAL INFORMATION -->
+      <div class="container">
+        <div class="well">
+          <h3>Local</h3>
+          <% if (user.local.email) { %>
+          <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>email</strong>: <span class="userName"><%= user.local.email %></span><br>
+          </p>
+          <% } %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h2>Search</h2>
+        <% if (user.local.email) { %>
+        <form action="/searches" method="POST">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Name</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" value="<%= user.local.email %>" aria-describedby="basic-addon1" name="name" readonly>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Search</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Mission Impossible" name="search">
+          </div>
+          <button type="submit" class="btn btn-secondary">Submit</button>
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <% if (searches) { %>
+        <h3>Last 5 Searches</h3>
+        <ul class="searches">
+          <% for (var i = 0; i < searches.length; i++) { %>
+          <li class="message">
+            <span><%= searches[i].name %></span>
+            <span><%= searches[i].search %></span>
+            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
+      </div>
+      <% } %>
+    </div>
+    <div class="row">
+      <div class="container">
+        <% if (info) { %>
+          <h1>Results for: <%= last %></h1>
+          <ul>
+            <% for (var j = 0; j < info.length; j++) { %>
+              <li>
+                <span><%= info[j].Title %></span>
+                <span><%= info[j].Year.split("–")[0] %></span>
+                <img src="<%= info[j].Poster%>" style=" width: 100px;"/>
+                <span><i class="fa fa-thumbtack" aria-hidden="true"></i></span>
+              </li>
+            <% } %>
+          </ul>
+        <% } else { %>
+          <span>Testing Purposes - OMDB has nothing to return</span>
+        <% } %>
+      </div>
+    </div>
+  </div>
+<%- include('footer'); -%>
