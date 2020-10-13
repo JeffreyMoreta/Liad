@@ -1,7 +1,7 @@
 const socket = io();
 const chatMessages = document.querySelector(".chatMessages");
 const chatForm = document.getElementById("chat-form");
-const username = document.querySelector(".userName");
+const username = document.querySelector(".userName").innerHTML;
 
 socket.emit("join", { username });
 

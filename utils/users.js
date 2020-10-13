@@ -1,7 +1,9 @@
+const user = require("../app/models/user");
+
 const users = [];
 
-function userJoin(id, username, room) {
-  const user = { id, username, room };
+function userJoin(id, username) {
+  const user = { id, username };
 
   users.push(user);
 
@@ -9,7 +11,7 @@ function userJoin(id, username, room) {
 }
 
 function getCurrentUser(id) {
-  return users.find((user) => user.id);
+  return users.find((user) => user.id === id);
 }
 
 function userLeave(id) {
@@ -20,9 +22,6 @@ function userLeave(id) {
   }
 }
 
-function getRoomUsers(room) {
-  return;
-}
 
 module.exports = {
   userJoin,
