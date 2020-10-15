@@ -72,8 +72,8 @@ function outputMessage(message) {
 function outputUsers(users) {
   userList.innerHTML = '';
   users.forEach(user=>{
-    const li = document.createElement('li');
-    li.innerText = user.username;
-    userList.appendChild(li);
+    const div = document.createElement('div');
+    div.innerText = user.username;
+    userList.appendChild(div);
   });
  }
