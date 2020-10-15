@@ -1,21 +1,28 @@
-var thumbtack = document.getElementsByClassName("fa-thumbtack");
+var pin = document.getElementsByClassName("bxs-pin");
 
-Array.from(thumbtack).forEach(function (element) {
+Array.from(pin).forEach(function (element) {
   element.addEventListener("click", function () {
-    var title = this.parentNode.parentNode.childNodes[1].innerText;
-    var year = this.parentNode.parentNode.childNodes[3].innerText;
-    console.log(title, year);
+    var name = document.querySelector(".userName").innerHTML;
+
+    var title = this.parentNode.parentNode.parentNode
+    .querySelector(".title").innerText;
+
+    var year = this.parentNode.parentNode.parentNode
+    .querySelector(".date").innerText;
+
+    var poster = this.parentNode.parentNode.parentNode
+    .querySelector(".poster").src;
+
     fetch("pinned", {
       method: "delete",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         title: title,
         year: year,
       }),
-    }).then(function (response) {
-      window.location.reload();
-    });
+    })
+      .then(function (data) {
+        window.location.reload(true);
+      });
   });
 });

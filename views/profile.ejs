@@ -166,16 +166,16 @@
                       <div class="col-lg-4 col-md-6">
                         <div class="single-blog-post">
                             <div class="post-image">
-                                <img src="<%= info[j].Poster%>" alt="image">
+                                <img class="poster" src="<%= info[j].Poster%>" alt="image">
 
                                 <div class="date"><i class='bx bx-calendar'></i><%= info[j].Year.split("–")[0] %></div>
                             </div>
 
                             <div class="post-content">
-                              <h3><%= info[j].Title %></h3>
+                              <h3 class="title"><%= info[j].Title %></h3>
 
                               <div class="post-info">
-                                <button class="btn btn-secondary"><i class="bx bxs-pin" aria-hidden="true"></i></button>
+                                <i class="bx bxs-pin" aria-hidden="true"></i>
                               </div>
                             </div>
                         </div>
@@ -224,7 +224,9 @@
       <!-- Particles Min JS -->
       <script src="assets/js/particles.min.js"></script>
       <script src="assets/js/coustom-particles"></script>
-      <!-- Main JS -->
+      <!-- Assests Main JS -->
       <script src="assets/js/main.js"></script>
+      <!-- Main JS -->
+      <script src="/main.js"></script>
   </body>
 </html>

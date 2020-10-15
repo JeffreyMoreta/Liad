@@ -1,13 +1,19 @@
-var thumbtack = document.getElementsByClassName("fa-thumbtack");
+var pin = document.getElementsByClassName("bxs-pin");
 var trash = document.getElementsByClassName("fa-trash");
 
-Array.from(thumbtack).forEach(function (element) {
+Array.from(pin).forEach(function (element) {
   element.addEventListener("click", function () {
     var name = document.querySelector(".userName").innerHTML;
-    var title = this.parentNode.parentNode.childNodes[1].innerText;
-    var year = this.parentNode.parentNode.childNodes[3].innerText;
-    var poster = this.parentNode.parentNode.childNodes[5].src;
-    console.log(title, year);
+
+    var title = this.parentNode.parentNode.parentNode
+    .querySelector(".title").innerText;
+
+    var year = this.parentNode.parentNode.parentNode
+    .querySelector(".date").innerText;
+
+    var poster = this.parentNode.parentNode.parentNode
+    .querySelector(".poster").src;
+
     fetch("searches", {
       method: "put",
       headers: { "Content-Type": "application/json" },
