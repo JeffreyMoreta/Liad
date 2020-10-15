@@ -61,6 +61,22 @@ module.exports = function (app, passport, db, fetch, omdb, ObjectId) {
       });
   });
 
+  app.get("/pinnedProfile/:id", isLoggedIn, function (req, res) {
+    db.collection("pinned")
+      .find({
+        name: req.params.id,
+      })
+      .toArray(function (err, result) {
+        var pinnedFiltered = result.filter((x) => x.pinned === true);
+        if (err) return console.log(err);
+        res.render("pinnedProfile.ejs", {
+          user: req.user,
+          profile: req.params.id,
+          pinned: pinnedFiltered,
+        });
+      });
+  });
+
   app.get("/lounge", isLoggedIn, function (req, res) {
     res.render("lounge.ejs", {
       user: req.user,

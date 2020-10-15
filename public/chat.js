@@ -39,7 +39,7 @@ function chatBubble(message){
           <span style="
             display: inline-block; 
             font-size: 10px;
-            color: lightgrey;">${message.username} ${message.time}</span>
+            color: lightgrey;"><a href="/pinnedProfile/${message.username}">${message.username}</a> ${message.time}</span>
           <span style="display: block;">${message.text}</span>
         </p>
       </div>
@@ -53,7 +53,7 @@ function chatBubble(message){
           <span style="
             display: inline-block; 
             font-size: 10px;
-            color: grey;">${message.username} ${message.time}</span>
+            color: grey;"><a href="/pinnedProfile/${message.username}" target="_blank">${message.username}</a> ${message.time}</span>
           <span style="display: block;">${message.text}</span>
         </p>
       </div>
