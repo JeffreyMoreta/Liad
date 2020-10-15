@@ -22,9 +22,14 @@ function userLeave(id) {
   }
 }
 
+function getRoomUsers() {
+  return users
+}
+
 
 module.exports = {
   userJoin,
   getCurrentUser,
   userLeave,
+  getRoomUsers,
 };

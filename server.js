@@ -71,6 +71,8 @@ io.on("connection", (socket) => {
       "message",
       formatMessage(loungeName, `${user.username} has joined`)
     );
+
+    io.emit('roomUsers', {users: getRoomUsers(user.room)});
   });
 
   socket.on("chatMessage", (msg) => {
@@ -88,6 +90,10 @@ io.on("connection", (socket) => {
         formatMessage(loungeName, `${user.username} has disconnected`)
       );
     }
+
+    io.emit('roomUsers', {
+      users: getRoomUsers()
+    });
   });
 });
 
