@@ -1,41 +1,122 @@
 <!doctype html>
-<html style="height: 100%;">
+<html lang="zxx">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-  <title>Pinned</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+        <!-- Bootstrap Min CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!-- Animate Min CSS -->
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <!-- BoxIcons Min CSS -->
+        <link rel="stylesheet" href="assets/css/boxicons.min.css">
+        <!-- Owl Carousel Min CSS -->
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <!-- Odometer Min CSS -->
+        <link rel="stylesheet" href="assets/css/odometer.min.css">
+        <!-- MeanMenu CSS -->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!-- Magnific Popup Min CSS -->
+        <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="assets/css/responsive.css">
 
-<body style="height: 100%;
-              display: -ms-flexbox;
-              display: flex;
-              -ms-flex-align: center;
-              align-items: center;
-              justify-content: center;
-              padding-top: 40px;
-              padding-bottom: 40px;
-              background-color: #f5f5f5;
-              ">
-  <div class="container">
-    <form action="/signup" method="post" class="form-signin width: 100%;
-                max-width: 330px;
-                padding: 15px;
-                margin: auto;">
-      <h1 class="h3 mb-3 font-weight-normal">Signup</h1>
-      <% if (message.length > 0) { %>
-      <div class="alert alert-danger"><%= message %></div>
-      <% } %>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required name="email" autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p>Already have an account? <a href="/login">Login</a></p>
-      <p>Or go <a href="/">home</a>.</p>
-    </form>
+        <title>Pinned</title>
+
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    </head>
+
+<body>
+
+  <!-- Start Preloader Area -->
+  <div class="preloader-area">
+    <div class="spinner">
+        <div class="inner">
+            <div class="disc"></div>
+            <div class="disc"></div>
+            <div class="disc"></div>
+        </div>
+    </div>
   </div>
+  <!-- End Preloader Area -->
+
+  <!-- Start Signup Area -->
+  <section class="signup-area">
+    <div class="row m-0">
+        <div class="col-lg-6 col-md-12 p-0">
+            <div class="signup-content">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="signup-form">
+                            <div class="logo">
+                                <a href="/"><img src="assets/img/logo.png" alt="image"></a>
+                            </div>
+
+                            <% if (message.length > 0) { %>
+                              <div class="alert alert-danger"><%= message %></div>
+                            <% } %>
+
+                            <h3>Open up your Pinned Account now</h3>
+                            <p>Already signed up? <a href="/login">Log in</a></p>
+
+                            <form action="/signup" method="post" class="form-signin">
+                                <div class="form-group">
+                                    <input type="email" name="email" id="inputEmail" placeholder="Your email address" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" name="password" id="inputPassword" placeholder="Create a password" class="form-control" required>
+                                </div>
+
+                                <button type="submit" class="default-btn"><i class="bx bx-log-in"></i>Sign Up</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 p-0">
+          <div class="signup-image">
+              <img src="assets/img/signup-bg.jpg" alt="image">
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Login Area -->
+
+  <!-- jQuery Min JS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <!-- Popper Min JS -->
+  <script src="assets/js/popper.min.js"></script>
+  <!-- Bootstrap Min JS -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- Magnific Popup Min JS -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <!-- Appear Min JS -->
+  <script src="assets/js/jquery.appear.min.js"></script>
+  <!-- Odometer Min JS -->
+  <script src="assets/js/odometer.min.js"></script>
+  <!-- Owl Carousel Min JS -->
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <!-- MeanMenu JS -->
+  <script src="assets/js/jquery.meanmenu.js"></script>
+  <!-- WOW Min JS -->
+  <script src="assets/js/wow.min.js"></script>
+  <!-- Message Conversation JS -->
+  <script src="assets/js/conversation.js"></script>
+  <!-- AjaxChimp Min JS -->
+  <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+  <!-- Form Validator Min JS -->
+  <script src="assets/js/form-validator.min.js"></script>
+  <!-- Contact Form Min JS -->
+  <script src="assets/js/contact-form-script.js"></script>
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
