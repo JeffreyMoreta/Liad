@@ -72,12 +72,12 @@ io.on("connection", (socket) => {
       formatMessage(loungeName, `${user.username} has joined`)
     );
 
-    io.emit('roomUsers', {users: getRoomUsers(user.room)});
+    io.emit("roomUsers", { users: getRoomUsers(user.room) });
   });
 
   socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id);
-    
+
     io.emit("message", formatMessage(user.username, msg));
   });
 
@@ -91,8 +91,8 @@ io.on("connection", (socket) => {
       );
     }
 
-    io.emit('roomUsers', {
-      users: getRoomUsers()
+    io.emit("roomUsers", {
+      users: getRoomUsers(),
     });
   });
 });
